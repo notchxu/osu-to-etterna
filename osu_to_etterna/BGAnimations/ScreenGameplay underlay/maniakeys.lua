@@ -1,0 +1,72 @@
+return Def.ActorFrame  { }
+-- --replacement for the receptors in this theme that tries to replicate your osu skin
+-- local cols = GAMESTATE:GetCurrentStyle():ColumnsPerPlayer()
+-- assert(cols == 4, "Number of columns isn't 4. We receptors will be invisible nao")
+-- local evencols = cols - cols%2
+-- local nfspace = MovableValues.NotefieldSpacing and MovableValues.NotefieldSpacing or 0
+
+-- local width = getNoteFieldScale(PLAYER_1)*(64 * cols * MovableValues.NotefieldWidth + nfspace * (evencols))
+-- local colWidth = width/cols
+-- local P1X = SCREEN_CENTER_X + MovableValues.NotefieldX + (cols % 2 == 0 and -nfspace / 2 or 0)
+-- --flip everything hurrdurr 
+-- local usingReverse = GAMESTATE:GetPlayerState(pn):GetCurrentPlayerOptions():UsingReverse()
+-- local o = usingReverse and -1 or 1
+-- local r = usingReverse and 0 or 180
+-- local screenEdge = usingReverse and SCREEN_BOTTOM or SCREEN_TOP
+
+-- local receptorSize = playerConfig:get_data(pn_to_profile_slot(PLAYER_1)).ReceptorSize
+-- local ogReceptorSize = getColumnWidth(cols)*82/52
+-- local h = 240 - getHitPosDownscroll(cols)
+-- local yOffset = h*(1-receptorSize/ogReceptorSize)
+
+-- local a = {"Left", "Down", "Up", "Right"}
+
+-- local t = Def.ActorFrame { }
+-- for i = 1, cols, 1 do 
+-- 	-- not pressed
+-- 	t[#t+1] =
+-- 		Def.Sprite {
+-- 			InitCommand = function(self)
+-- 				self:addrotationx(r)
+-- 				self:halign(0):valign(1):xy(P1X - (width/2) + (width/cols)*(i-1), screenEdge + o*yOffset)
+-- 				self:Load(GetPathO(getReceptors(4)[i], "png"))
+-- 				-- what the fuck is this: these were magic numbers
+-- 				-- encountered when manually porting my etterna skin to osu
+-- 				w = self:GetWidth()*52/84
+-- 				c = THEME:GetMetric("Player", "ColumnWidth")
+-- 				self:basezoomx(c/w)
+-- 				self:zoom(colWidth/self:GetWidth() * w/c)
+-- 				self:visible(true)
+-- 			end,
+-- 			CodeMessageCommand = function(self, params)
+-- 				if params.Name == "Game" .. a[i] then 
+-- 					self:visible(false)
+-- 				elseif params.Name == "GameRelease" .. a[i] then
+-- 					self:visible(true)
+-- 				end
+-- 			end,
+-- 		}
+-- 	-- pressed
+-- 	t[#t+1] = 
+-- 		Def.Sprite{
+-- 			InitCommand = function(self)
+-- 				self:addrotationx(r)
+-- 				self:halign(0):valign(1):xy(P1X - (width/2) + (width/cols)*(i-1), screenEdge + o*yOffset)
+-- 				self:Load(GetPathO(getReceptorsPress(4)[i], "png"))
+-- 				w = self:GetWidth()*52/84
+-- 				c = THEME:GetMetric("Player", "ColumnWidth")
+-- 				self:basezoomx(c/w)
+-- 				self:zoom(colWidth/self:GetWidth() * w/c)
+-- 				self:visible(false)
+-- 			end,
+-- 			CodeMessageCommand = function(self, params)
+-- 				if params.Name == "Game" .. a[i] then 
+-- 					self:visible(true)
+-- 				elseif params.Name == "GameRelease" .. a[i] then
+-- 					self:visible(false)
+-- 				end
+-- 			end,
+-- 		} 
+-- end
+
+-- return t
