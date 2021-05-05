@@ -1,23 +1,23 @@
-#osutoetterna
+# osutoetterna
 
-##Instructions
+## Instructions
 1. Copy `osu_to_etterna_noteskin` over to `/NoteSkins/dance/`.
 2. Copy `osu_to_etterna` over to `/Themes/`.
 3. Copy your osu! skin over to `/Themes/osu_to_etterna/Graphics/OsuSkins/`.
 4. In `/Themes/osu_to_etterna/metrics.ini` change the line `OsuFolder=""` to `OsuFolder="<your_osu_skin_folder>"`.
 5. Delete the folder `/Save/LocalProfiles/\[your_profile_name\]/osu_to_etterna_settings/` if it exists. (You won't have to do this on first download, since this folder doesn't yet exist.)
 
-##In-game customizations
+## In-game customizations
 1. From the beginning menu, go to `Options -\> Display Options -\> Appearance Options` and change `Theme` to `osu_to_etterna`.
 2. In the song selection menu, go to `Player Options`.
 3. Change `NoteSkin` to `osu_to_etterna_noteskin`.
 4. To find your CMod from your osu!mania scroll speed, use the formula `CMod = scroll_speed * 3200/receptor_size` where `receptor_size` denotes your receptor size, and can be found in Player Options. 
 5. Turn on `Customize Gameplay`, and then in gameplay you will be able to move around judgements/combo/percent/PA Count/etc.
 
-##Setting up Etterna/pack download/etc.
+## Setting up Etterna/pack download/etc.
 Etienne has some good videos on this.
 
-##Known issues
+## Known issues
 Q: Support for [n]key?
 A: Right now, there's only support for 4k.
 
