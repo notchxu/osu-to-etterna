@@ -26,3 +26,9 @@ A: Your holds will look weird if the widths and heights are not powers of 2. To 
 
 Q: My judgments/combo are too small.
 A: The reason that this occurs is that you likely didn't have the double resolution sprites in your osu! skin. To fix this, use Customize Gameplay to double the zoom. You will then likely have spacing issues; to fix those, go to `/Themes/osu_to_etterna/Fonts/_osucombo.ini` and change `AdvanceExtraPixels=` from `-5` to `-2.5`.
+
+## Issues planned to be fixed for next update
+1. Flip `mania-noteH` horizontally if `mania-noteL` doesn't exist
+2. Have the code search for a note in, in order of priority: (1) `skin.ini` (2) the skin folder (3) the `_fallback` skin folder 
+3. Disambiguate between elements rendered at 2x resolution (denoted by `@2x`) and scale them accordingly
+4. Insert graphical interface to switch between skins in-game
